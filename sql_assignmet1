@@ -1,0 +1,47 @@
+CREATE DATABASE sample;
+use sample;
+
+create table country_data (id int , name VARCHAR(20), COUNTRYCODE VARCHAR(10) , DISTRICT VARCHAR(20), POPULATION INT);
+
+INSERT INTO country_data VALUES (6, 'Rotterdam' , 'NLD' , 'Zuid-Holland' , 593321);
+INSERT INTO country_data VALUES (3878, 'Scottsdale' , 'USA' , 'arizona' , 33321);
+INSERT INTO country_data VALUES (3965, 'Corona' , 'USA' , 'California' , 86521);
+INSERT INTO country_data VALUES (3973, 'Concord' , 'USA' , 'California' , 993321);
+INSERT INTO country_data VALUES (3977, 'CedarRapids' , 'USA' , 'Iowa' , 171780);
+INSERT INTO country_data VALUES (3982, 'Coral Springs' , 'USA' , 'Florida' , 121780);
+INSERT INTO country_data VALUES (4054, 'Fairfield' , 'USA' , 'California' , 593321);
+INSERT INTO country_data VALUES (4058, 'Boulder' , 'USA' , 'Colorado' , 905555);
+INSERT INTO country_data VALUES (4061, 'Fall River' , 'USA' , 'Massachusett' , 90555);
+
+SELECT * FROM country_data;
+
+Q1 . SELECT * FROM  country_data WHERE population > 100000 and COUNTRYCODE = 'USA';
+
+Q2 . SELECT * FROM  country_data WHERE population > 120000 and COUNTRYCODE = 'USA';
+
+===============================================================
+
+
+create table station (id int , city VARCHAR(20), state VARCHAR(10) , LAT_N INT, LONG_W int);
+INSERT INTO station VALUES (794, 'Kissee Mills' , 'MO' , 139 , 73);
+
+INSERT INTO station VALUES (34, 'lomamar' , 'UUM' , 342 , 7323);
+INSERT INTO station VALUES (733, 'Mills' , 'JK' , 11439 , 73145);
+INSERT INTO station VALUES (231, 'Kissee' , 'YY' , 549 , 7433);
+INSERT INTO station VALUES (711, 'Kkoil' , 'BN' , 131 , 563);
+INSERT INTO station VALUES (74, 'vadasery' , 'YU' , 13915 , 74313);
+INSERT INTO station VALUES (79, 'Krishnan coil' , 'ER' , 13976 , 7153);
+INSERT INTO station VALUES (764, 'coimabore' , 'QW' , 13229 , 73723);
+INSERT INTO station VALUES (86, 'ganthipuram' , 'ACH' , 137249 , 223);
+INSERT INTO station VALUES (774, 'okm' , 'ET' , 2779 , 2753);
+INSERT INTO station VALUES (794, 'vanamada' , 'CT ' , 31239 , 4135);
+INSERT INTO station VALUES (704, 'velore' , 'FFO' , 62546, 6235);
+INSERT INTO station VALUES (714, 'mannur' , 'pp' , 626 , 6332);
+INSERT INTO station VALUES (724, 'mylapur' , 'OO' , 85876 , 635631);
+INSERT INTO station VALUES (664, 'vadapalami' , 'fO' , 07896 , 452673);
+
+SELECT * FROM station;
+
+Ans1. SELECT city , state  FROM station;
+
+Ans2. SELECT distinct city FROM station WHERE MOD(id,2)=0 ;
