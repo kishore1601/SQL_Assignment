@@ -46,6 +46,19 @@ Ans1. SELECT city , state  FROM station;
 
 Ans2. SELECT distinct city FROM station WHERE MOD(id,2)=0 ;
 
-Ans3. select city from station where city REGEXP "^[aeiou].*";
+Ans3.  #shortest and longest CITY names, as well as their respective lengths
+SELECT city , LENGTH(city) FROM station ORDER BY LENGTH(city) ASC , city LIMIT 3;
 
+Ans4.
+#names starting with vowels (i.e., a, e, i, o, or u)
+select city from station where city REGEXP "^[aeiou].*";
+
+#names starting with vowels (i.e., a, e, i, o, or u)
+SELECT DISTINCT(CITY) FROM station WHERE CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' 
+OR CITY LIKE '%u';   
+
+Ans5.
+#names ending with vowels (a, e, i, o, u) from STATION
+SELECT DISTINCT(CITY) FROM station WHERE CITY LIKE 'a%' OR CITY LIKE 'e%' OR CITY LIKE 'i%' OR CITY LIKE 'o%' 
+OR CITY LIKE 'u&';
 
