@@ -121,4 +121,26 @@ SELECT * FROM views;
 
 SELECT distinct author_id FROM views where author_id = viewer_id;
 
-========================================================================================+
+=========================================================================================
+=========================================================================================
+
+-- Active: 1667924426088@@127.0.0.1@3306
+CREATE DATABASE sample;
+use sample;
+create table country_data(name VARCHAR(10), continent VARCHAR(10), area int , population int, gdp bigint);
+
+DROP TABLE country_data;
+INSERT INTO country_data VALUES ('Afganstn','asia',652230, 25500100, 20343000000);
+INSERT INTO country_data VALUES ('Albania','Europe',28748, 2831741, 12960000000);
+INSERT INTO country_data VALUES ('Algeria','Africa',2381741, 37100000, 188681000000);
+INSERT INTO country_data VALUES ('Andorra','Europe',468, 78115, 3712000000);
+INSERT INTO country_data VALUES ('Angola','Africa',1246700, 20609294, 100990000000);
+
+SELECT * FROM country_data;
+
+SELECT name , population , area FROM country_data where area > 3000000 or population > 25000000;
+
+Ans: 
+name         population   area
+afganstn     25500100     652230
+Algeria      37100000     2381741
