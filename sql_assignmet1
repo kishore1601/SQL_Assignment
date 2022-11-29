@@ -198,3 +198,32 @@ henry
 max
 
 ============================================================================
+
+CREATE table SalesPerson (sales_id int , s_name VARCHAR(20), salary int , commission_rate int , hire_date DATE);
+
+INSERT INTO SalesPerson VALUES (1, 'john' , 100000, 6,'2006-04-01');
+INSERT INTO SalesPerson VALUES (2, 'AMy' , 12000, 5,'2010-05-01');
+INSERT INTO SalesPerson VALUES (3, 'mark' , 65000, 12,'2008-12-25');
+INSERT INTO SalesPerson VALUES (4, 'pam' , 25000, 25,'2005-01-01');
+INSERT INTO SalesPerson VALUES (5, 'Alex' , 5000, 10,'2003-03-02');
+
+CREATE Table Company_table (com_id int , c_name varchar(10), city VARCHAR(10));
+
+INSERT INTO Company_table VALUES (1,'red','boston');
+INSERT INTO Company_table VALUES (1,'orange','NY');
+INSERT INTO Company_table VALUES (1,'yellow','boston');
+INSERT INTO Company_table VALUES (1,'green','Austin');
+
+SELECT * FROM Company_table;
+
+SELECT * FROM SalesPerson;
+
+CREATE table Orders_table (order_id int, order_date date,com_id int,sales_id int , amount int);
+
+INSERT INTO Orders_table VALUES (1,'2014-01-01',3,4,10000);
+INSERT INTO Orders_table VALUES (2,'2014-01-02',4,5,5000);
+INSERT INTO Orders_table VALUES (3,'2014-01-03',1,1,50000);
+INSERT INTO Orders_table VALUES (4,'2014-01-04',1,4,25000);
+
+select sales_id ,com_id, salary, commission_rate , hire_date, city, s_name ,c_name 
+from SalesPerson s left join Company_table c;
