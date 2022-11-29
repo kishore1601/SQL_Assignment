@@ -144,3 +144,25 @@ Ans:
 name         population   area
 afganstn     25500100     652230
 Algeria      37100000     2381741
+
+========================================================================================
+SELECT name , population , area FROM country_data where area > 3000000 or population > 25000000;
+
+CREATE Table customer (id int, name VARCHAR(20), refree_id int);
+
+INSERT into customer values (1,'will',null);
+INSERT into customer values (2,'jane',null);
+INSERT into customer values (3,'alex',2);
+INSERT into customer values (4,'bill',null);
+INSERT into customer values (5,'mark',1);
+INSERT into customer values (6,'zack',2);
+SELECT * FROM customer;
+
+SELECT name FROM customer WHERE refree_id != 2  OR refree_id IS NULL;
+
+Ans
+name
+will
+jane
+bill
+mark
