@@ -166,3 +166,35 @@ will
 jane
 bill
 mark
+
+
+=================================================================================
+
+CREATE table customers (id int , name VARCHAR(20) , PRIMARY KEY(id));
+
+INSERT into customers VALUES(1, 'Joe');
+INSERT into customers VALUES(2, 'henry');
+INSERT into customers VALUES(3, 'sam');
+INSERT into customers VALUES(4, 'max');
+
+SELECT * FROM customers;
+
+CREATE TABLE orders (id int, cust_id int);
+
+INSERT into orders values(1,3);
+INSERT into orders values(2,1);
+SELECT * FROM orders;
+
+select customers.name
+from customers
+where customers.id not in
+(
+    select cust_id from orders
+);
+
+
+Ans:
+henry
+max
+
+============================================================================
