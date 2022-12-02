@@ -227,3 +227,29 @@ INSERT INTO Orders_table VALUES (4,'2014-01-04',1,4,25000);
 
 select sales_id ,com_id, salary, commission_rate , hire_date, city, s_name ,c_name 
 from SalesPerson s left join Company_table c;
+
+---------------------------------------------------------------------
+
+CREATE table UserActivity (username VARCHAR(10), activity VARCHAR(10), startDate date , endDate date);
+
+INSERT INTO UserActivity VALUES ('Alice', 'Travel' ,'2020-02-12','2020-02-20');
+INSERT INTO UserActivity VALUES ('Alice', 'Dancing' ,'2020-02-21','2020-02-23');
+INSERT INTO UserActivity VALUES ('Alice', 'Travel' ,'2020-02-24','2020-02-28');
+INSERT INTO UserActivity VALUES ('Bob', 'Travel' ,'2020-02-11','2020-02-18');
+SELECT * FROM UserActivity;
+
+SELECT * FROM UserActivity where  count(activity) > 1 ;
+
+select distinct username, activity, startDate, endDate
+from
+    (select u.*,
+           rank() over (partition by username order by startDate desc) as rnk,
+           count(activity) over (partition by username) as num
+    from UserActivity u) t
+where (num <> 1 and rnk = 2) or (num = 1 and rnk = 1);
+
+
+ANS:
+
+Alice  Dancing    2020-02-21     2020-02-23
+Bob    Travel     2020-02-11       2020-02-18
