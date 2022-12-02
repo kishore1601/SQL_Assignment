@@ -296,6 +296,7 @@ INSERT INTO employee VALUES (5, 'ajay' , 14, 23000);
 INSERT INTO employee VALUES (6, 'pitchu' , 19, 24000);
 INSERT INTO employee VALUES (7, 'mani' , 37, 25000);
 
+Q1
 SELECT * FROM employee ORDER BY name asc;
 
 5  ajay      14    23000
@@ -305,4 +306,15 @@ SELECT * FROM employee ORDER BY name asc;
 4  krishna   12    24000
 7  mani      37    25000
 6  pitchu    19    24000
+
+Q2
+SELECT * FROM employee where months < 17 and salary < 24500;
+
+Ans:
+4 krishna 12 24000
+
+5  ajay   14  23000
+
+==============================================================
+
 
